@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"jshint.enable": false,
+		"githubPullRequests.remotes": [
+			"origin",
+			"upstream",
+			"https://github.com/CliffCrerar/silex-react-loopback-demo.git"
+		],
+		"html.format.wrapAttributes": "force",
+	}
+}

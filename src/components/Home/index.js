@@ -3,19 +3,19 @@ import {style} from './index.scss';
 import { Container } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
-const PageOne = ({}) => {
+const Home = () => {
 
     return (
         <Container className={style}>
             <Typography component="h1" variant="h1">
-                Page One
+            Home
             </Typography>
         </Container>
     );
 };
 
-PageOne.propTypes = {
+Home.propTypes = {
 
 };
 
-export default PageOne;
+export default Home;
