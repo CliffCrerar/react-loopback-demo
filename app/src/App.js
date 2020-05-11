@@ -1,19 +1,11 @@
+import { AppBar, Box, Paper, Tab, Tabs, Typography, withTheme } from '@material-ui/core';
+import FolderOpenIcon from '@material-ui/icons/FolderOpen';
+import HomeIcon from '@material-ui/icons/Home';
 import React, { useState } from 'react';
 import './App.scss';
-
-import { Tabs, Tab, AppBar, Typography, Button, withTheme } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home';
-import FolderOpenIcon from '@material-ui/icons/FolderOpen';
-import PageOne from './components/page-one';
 import Home from './components/Home';
+import PageOne from './components/page-one';
 import PageTwo from './components/page-two';
-import { Paper } from '@material-ui/core';
-import { Fab } from '@material-ui/core';
-import { Icon } from '@material-ui/core';
-import { Box } from '@material-ui/core';
-import ColorLensIcon from '@material-ui/icons/ColorLens';
-
-
 
 function App(props) {
   console.log('props: ', props);
@@ -32,15 +24,12 @@ function App(props) {
 
       {/* App header */}
       <header>
-
         <AppBar position="relative" component="div">
-
           <Box
             p="30px">
-
             <Paper color="secondary">
               <Box
-                styles={{background: props.theme.palette.secondary.main}}
+                styles={{ background: props.theme.palette.secondary.main }}
                 display="flex"
                 component="div"
                 justifyContent="space-between"
@@ -49,18 +38,16 @@ function App(props) {
                   p="10px"
                   variant="h5"
                   component="div">
-                  Silex Consulting app Demo
+                  Silex Consulting Demo
                 </Typography>
                 <Typography
                   variant="p"
                   component="div"
-                  color="text.secondary"><Time/></Typography>
+                  color="text.secondary"><Time /></Typography>
               </Box>
             </Paper>
           </Box>
-
         </AppBar>
-
       </header>
 
       {/* App Nav */}
@@ -122,11 +109,11 @@ function App(props) {
   );
 }
 
-function Time(){
+function Time() {
   const [time, changeTime] = useState(new Date())
   setInterval(() => changeTime(new Date()), 1000);
   return (
-  <div>{time.toString()}</div>
+    <div>{time.toString()}</div>
   )
 }
 
