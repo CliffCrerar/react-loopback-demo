@@ -6,9 +6,6 @@ const Login = () => {
 
     const headers = new Headers();
     const [message, setMessage] = useState(null);
-    let email;
-    let password;
-
 
     function onSubmitClick(ev) {
         ev.persist();
@@ -20,11 +17,7 @@ const Login = () => {
                 password: ev.target.form[1]
             }
         });
-        // console.log('response: ', response);
-        request.then(response => {
-            console.log(response);
-            setMessage(response.statusText);
-        })
+        request.then(response => setMessage(response.statusText));
     }
 
 
@@ -32,8 +25,8 @@ const Login = () => {
         <Fragment>
             <Box p="20px">
                 <form className={style}>
-                    <input name="email" type="email" required placeholder="email" value={email} /><br />
-                    <input name="password" type="password" required placeholder="password" password={password} /><br />
+                    <input name="email" type="email" required placeholder="email" /><br />
+                    <input name="password" type="password" required placeholder="password" /><br />
                     <button onClick={onSubmitClick} type="submit">Submit</button>
                 </form>
                 <p>{message}</p>
