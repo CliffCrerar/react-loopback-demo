@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Stack:",
   "main": "index.js",
-  "scripts": {},
   "dependencies": {
-    "@@front-end": "file:./app",
-    "@@back-end": "file:./api"
+    "front-end": "file:./app",
+    "back-end": "file:./api"
   },
   "repository": {
     "type": "git",

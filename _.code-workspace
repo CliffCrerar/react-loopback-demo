@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../note"
+		},
+		{
+			"path": "../loopback4-example-shopping"
+		}
+	],
+	"settings": {
+		"jshint.enable": false,
+		"githubPullRequests.remotes": [
+			"origin",
+			"upstream",
+			"https://github.com/CliffCrerar/silex-react-loopback-demo.git"
+		],
+		"html.format.wrapAttributes": "force",
+		"material-icon-theme.activeIconPack": "react",
+		"workbench.iconTheme": "material-icon-theme",
+		"editor.suggest.showIcons": true,
+		"workbench.editor.showIcons": true,
+		"editor.fontSize": 13,
+		"git.ignoreLimitWarning": true,
+		"editor.wordWrapColumn": 200,
+		"editor.wordWrap": "on",
+		"editor.renderLineHighlight": "none",
+	}
+}
