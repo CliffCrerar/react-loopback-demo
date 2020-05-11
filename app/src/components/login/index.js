@@ -1,25 +1,44 @@
-import React from 'react';
+import { Box } from '@material-ui/core';
+import React, { Fragment, useState } from 'react';
 import { style } from './index.scss';
 
 const Login = () => {
 
-    const [{ email, password }, getForm] = useState({ email: null, password: null })
+    const headers = new Headers();
+    const [message, setMessage] = useState(null);
+    let email;
+    let password;
+
 
     function onSubmitClick(ev) {
         ev.persist();
         ev.preventDefault();
-
-        // ev.target.parent
-        console.log('ev.target.parent: ', ev);
+        headers.append('Content-Type', 'application/json');
+        const request = fetch('http://localhost:3000/users', {
+            method: 'POST', headers, body: {
+                email: ev.target.form[0],
+                password: ev.target.form[1]
+            }
+        });
+        // console.log('response: ', response);
+        request.then(response => {
+            console.log(response);
+            setMessage(response.statusText);
+        })
     }
 
 
     return (
-        <form className={style} action="">
-            <input name="email" type="email" required placeholder="email" />
-            <input name="password" type="password" required placeholder="password" />
-            <button onClick={onSubmitClick} type="submit">Submit</button>
-        </form>
+        <Fragment>
+            <Box p="20px">
+                <form className={style}>
+                    <input name="email" type="email" required placeholder="email" value={email} /><br />
+                    <input name="password" type="password" required placeholder="password" password={password} /><br />
+                    <button onClick={onSubmitClick} type="submit">Submit</button>
+                </form>
+                <p>{message}</p>
+            </Box>
+        </Fragment>
     );
 };
 
