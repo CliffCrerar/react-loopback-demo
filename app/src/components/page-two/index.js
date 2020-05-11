@@ -1,9 +1,8 @@
+import { Container, Typography } from '@material-ui/core';
 import React from 'react';
-import {style} from './index.scss';
-import { Typography } from '@material-ui/core';
-import { Container } from '@material-ui/core';
+import { style } from './index.scss';
 
-const PageTwo = ({}) => {
+const PageTwo = () => {
 
     return (
         <Container className={style}>
