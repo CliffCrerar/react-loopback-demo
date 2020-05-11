@@ -20,7 +20,6 @@ const Login = () => {
         request.then(response => setMessage(response.statusText));
     }
 
-
     return (
         <Fragment>
             <Box p="20px">
