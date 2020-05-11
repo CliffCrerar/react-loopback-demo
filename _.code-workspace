@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../note"
-		},
-		{
-			"path": "../loopback4-example-shopping"
 		}
 	],
 	"settings": {
@@ -27,5 +21,6 @@
 		"editor.wordWrapColumn": 200,
 		"editor.wordWrap": "on",
 		"editor.renderLineHighlight": "none",
+		"jest.autoEnable": false,
 	}
 }
