@@ -3,6 +3,7 @@ import { ColorLensIcon } from '@material-ui/icons/ColorLens';
 import React from 'react';
 import { style } from './index.scss';
 function ThemeChanger() {
+    // Not implemented
     let anchorEl;
     let handleClose;
     return (

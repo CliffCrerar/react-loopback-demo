@@ -1,5 +1,6 @@
 import { Container, Typography } from '@material-ui/core';
 import React from 'react';
+import Login from '../login';
 import { style } from './index.scss';
 
 const PageOne = () => {
@@ -9,6 +10,7 @@ const PageOne = () => {
             <Typography component="h1" variant="h1">
                 Page One
             </Typography>
+            <Login />
         </Container>
     );
 };
