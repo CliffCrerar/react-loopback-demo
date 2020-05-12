@@ -13,23 +13,13 @@ export class User extends Entity {
     type: 'string',
     required: true,
   })
-  name: string;
+  firstname: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  password: string;
-
-  @property({
-    type: 'number',
-  })
-  age?: number;
-
-  @property({
-    type: 'string',
-  })
-  address?: string;
+  lastname: string;
 
 
   constructor(data?: Partial<User>) {

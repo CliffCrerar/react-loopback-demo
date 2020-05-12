@@ -1,6 +1,5 @@
-import { withTheme } from '@material-ui/core';
+import { withTheme, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
-import './App.scss';
 import Home from './components/home';
 import PageOne from './components/page-one';
 import PageTwo from './components/page-two';
@@ -8,6 +7,7 @@ import Footer from './components/_footer';
 import AppHeader from './components/_header';
 import Main from './components/_main';
 import Navbar from './components/_navbar';
+import './App.scss';
 
 function App() {
 
@@ -35,9 +35,7 @@ function App() {
 function Time() {
   const [time, changeTime] = useState(new Date());
   setInterval(() => changeTime(new Date()), 1000);
-  return (
-    <div>{time.toString()}</div>
-  )
+  return (<Typography variant="caption">{time.toString()}</Typography>)
 }
 
 

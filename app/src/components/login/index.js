@@ -1,36 +1,53 @@
-import { Box } from '@material-ui/core';
+import { Box, Typography, Button, Container, TextField } from '@material-ui/core';
 import React, { Fragment, useState } from 'react';
-import { style } from './index.scss';
+import './index.scss';
 
 const Login = () => {
 
-    const headers = new Headers();
     const [message, setMessage] = useState(null);
 
     function onSubmitClick(ev) {
+        console.log('ev: ', ev);
         ev.persist();
         ev.preventDefault();
-        headers.append('Content-Type', 'application/json');
+        const { firstname, lastname } = ev.currentTarget.form;
         const request = fetch('http://localhost:3000/users', {
-            method: 'POST', headers, body: {
-                email: ev.target.form[0],
-                password: ev.target.form[1]
-            }
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ firstname: firstname.value, lastname: lastname.value })
         });
-        request.then(response => setMessage(response.statusText));
+        request.then(response => {
+            setMessage(response.statusText)
+            console.log(response);
+        });
     }
 
     return (
-        <Fragment>
-            <Box p="20px">
-                <form className={style}>
-                    <input name="email" type="email" required placeholder="email" /><br />
-                    <input name="password" type="password" required placeholder="password" /><br />
-                    <button onClick={onSubmitClick} type="submit">Submit</button>
+        <Container maxWidth="lg">
+            <Typography variant="h6">Add Users</Typography><br />
+            <Box >
+                <form>
+                    <TextField
+                        // component="input"
+                        className="input"
+                        name="firstname"
+                        variant="outlined"
+                        label="First Name" /><br />
+                    <TextField
+                        // component="input"
+                        className="input"
+                        name="lastname"
+                        variant="outlined"
+                        label="Last Name" /><br />
+                    <Box>
+                        <Button variant="outlined" onClick={onSubmitClick} type="submit">Submit</Button>
+                    </Box>
                 </form>
-                <p>{message}</p>
+                <Box>
+                    <Typography style={{ position: 'initial' }} className="message" component="span" variant="body">{message}</Typography>
+                </Box>
             </Box>
-        </Fragment>
+        </Container>
     );
 };
 

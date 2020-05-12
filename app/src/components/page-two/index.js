@@ -5,10 +5,8 @@ import { style } from './index.scss';
 const PageTwo = () => {
 
     return (
-        <Container className={style}>
-            <Typography component="h1" variant="h1">
-                Page One
-            </Typography>
+        <Container maxWidth="lg" className={style}>
+            <Typography component="h1" variant="h1">Page Two</Typography>
         </Container>
     );
 };

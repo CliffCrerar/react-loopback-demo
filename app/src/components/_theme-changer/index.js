@@ -2,6 +2,7 @@ import { Box, Fab, Menu, MenuItem } from '@material-ui/core';
 import { ColorLensIcon } from '@material-ui/icons/ColorLens';
 import React from 'react';
 import { style } from './index.scss';
+
 function ThemeChanger() {
     // Not implemented
     let anchorEl;
@@ -17,8 +18,7 @@ function ThemeChanger() {
                     anchorEl={anchorEl}
                     keepMounted
                     open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
+                    onClose={handleClose}>
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>

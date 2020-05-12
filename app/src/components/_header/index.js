@@ -1,6 +1,7 @@
-import { AppBar, Box, Paper, Typography, withTheme } from '@material-ui/core';
+import { AppBar, Box, Paper, Typography, withTheme, TextField } from '@material-ui/core';
 import React from 'react';
 import { style } from './index.scss';
+import CustomSearchElement from '../_custom-search';
 
 const AppHeader = ({ Time, theme }) => {
 
@@ -9,8 +10,12 @@ const AppHeader = ({ Time, theme }) => {
             <header>
                 <AppBar position="relative" component="div">
                     <Box
+                        display="flex"
+                        flexDirection="row"
+                        flexWrap="wrap"
+                        justifyContent="space-between"
                         p="30px">
-                        <Paper color="secondary">
+                        {/* <Paper color="secondary"> */}
                             <Box
                                 styles={{ background: theme.palette.secondary.main }}
                                 display="flex"
@@ -18,17 +23,15 @@ const AppHeader = ({ Time, theme }) => {
                                 justifyContent="space-between"
                                 alignItems="center">
                                 <Typography
-                                    p="10px"
                                     variant="h5"
                                     component="div">
-                                    Silex Consulting Demo
-                                    </Typography>
-                                <Typography
-                                    variant="p"
-                                    component="div"
-                                    color="text.secondary"><Time /></Typography>
+                                    React - Material UI - Loopback
+                                    <br />
+                                    {/* <Time /> */}
+                                </Typography>
                             </Box>
-                        </Paper>
+                        {/* </Paper> */}
+                        <Box><CustomSearchElement/></Box>
                     </Box>
                 </AppBar>
             </header>

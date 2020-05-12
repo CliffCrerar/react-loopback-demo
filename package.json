@@ -1,5 +1,5 @@
 {
-  "name": "silex-react-loopback-stack",
+  "name": "react-loopback-stack",
   "version": "1.0.0",
   "description": "Stack:",
   "main": "index.js",
@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/CliffCrerar/silex-react-loopback-demo/issues"
   },
+  "proxy":"http://127.0.0.1:3000",
   "homepage": "https://github.com/CliffCrerar/silex-react-loopback-demo#readme"
 }

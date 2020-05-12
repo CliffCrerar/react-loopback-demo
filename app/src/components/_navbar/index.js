@@ -5,15 +5,11 @@ import React, { useState } from 'react';
 import { style } from './index.scss';
 
 const Navbar = (props) => {
-    console.log('props: ', props);
 
     const { changeMainComponent } = props
     const [selected, changeSelected] = useState(0);
+    const onNavTabClick = (event, value) => { changeSelected(value); changeMainComponent(value); };
 
-    const onNavTabClick = (event, value) => {
-        changeSelected(value)
-        changeMainComponent(value);
-    };
     return (
         <div className={style}>
             <nav>
@@ -30,11 +26,19 @@ const Navbar = (props) => {
                         variant="scrollable"
                         scrollButtons="on"
                         indicatorColor="secondary"
-                        aria-label="scrollable force tabs example"
-                    >
-                        <Tab index={0} label={'Home'} icon={<HomeIcon />} />
-                        <Tab index={1} label={'Page One'} icon={<FolderOpenIcon />} />
-                        <Tab index={2} label={'Page Two'} icon={<FolderOpenIcon />} />
+                        aria-label="scrollable force tabs example">
+                        <Tab 
+                            index={0} 
+                            label={'Home'} 
+                            icon={<HomeIcon />} />
+                        <Tab 
+                            index={1} 
+                            label={'Form Demo'} 
+                            icon={<FolderOpenIcon />} />
+                        <Tab 
+                            index={2} 
+                            label={'Page Two'} 
+                            icon={<FolderOpenIcon />} />
                     </Tabs>
                 </Box>
             </nav>
@@ -42,8 +46,6 @@ const Navbar = (props) => {
     );
 };
 
-Navbar.propTypes = {
-
-};
+Navbar.propTypes = {};
 
 export default Navbar;
