@@ -4,22 +4,19 @@ import './index.scss';
 
 const Login = () => {
 
-    const [message, setMessage] = useState(null);
+    const [message, setMessage] = useState('');
 
     function onSubmitClick(ev) {
         console.log('ev: ', ev);
         ev.persist();
         ev.preventDefault();
         const { firstname, lastname } = ev.currentTarget.form;
-        const request = fetch('http://localhost:3000/users', {
+        const request = fetch('/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ firstname: firstname.value, lastname: lastname.value })
         });
-        request.then(response => {
-            setMessage(response.statusText)
-            console.log(response);
-        });
+        request.then(response => setMessage(response.statusText));
     }
 
     return (
