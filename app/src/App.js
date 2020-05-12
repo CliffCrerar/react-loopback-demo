@@ -37,7 +37,5 @@ function Time() {
   setInterval(() => changeTime(new Date()), 1000);
   return (<Typography variant="caption">{time.toString()}</Typography>)
 }
-
-
 export default withTheme(App);
 
