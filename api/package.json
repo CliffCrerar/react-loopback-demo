@@ -29,7 +29,9 @@
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
     "start": "node -r source-map-support/register .",
-    "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "gcloud:build": "gcloud builds submit --tag gcr.io/infinity-arc/react-mui-loopback",
+    "gcloud:deploy": "gcloud run deploy --image gcr.io/infinity-arc/react-mui-loopback --platform managed --allow-unauthenticated"
   },
   "repository": {
     "type": "git"
@@ -53,6 +55,7 @@
     "@loopback/rest": "^4.0.0",
     "@loopback/rest-explorer": "^2.2.0",
     "@loopback/service-proxy": "^2.2.0",
+    "loopback-connector-couchdb2": "^1.5.3",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
